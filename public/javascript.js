@@ -10,9 +10,14 @@ function httpGetAsync(theUrl, callback)
 }
 
 httpGetAsync("/data", (resp) => {
+
+    let wrapper = document.createElement("div");
+    wrapper.className="wrapper";
+    document.body.appendChild(wrapper);
+
   JSON.parse(resp).map((person, index) => {
     let section = document.createElement("div");
-    let quote = document.createElement("h2");
+    let quote = document.createElement("p");
     let birthday = document.createElement("h4");
     let photo = document.createElement("img");
     
@@ -21,7 +26,7 @@ httpGetAsync("/data", (resp) => {
     birthday.innerHTML = `${person.name} was born on ${person.birthday}`
     photo.src = `${person.image_url}`
 
-    document.body.appendChild(section);
+    document.querySelector(".wrapper").appendChild(section);
     document.getElementsByClassName("section")[index].appendChild(photo);
     document.getElementsByClassName("section")[index].appendChild(quote);
     document.getElementsByClassName("section")[index].appendChild(birthday);

@@ -5,3 +5,25 @@ body {
 h1 {
   color: red;
 }
+
+.wrapper {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 800px) {
+  .wrapper {
+    flex-flow: row wrap;
+    align-items: inherit;
+  }
+}
+
+.section {
+  flex: 1;
+  border: 1px solid black;
+  max-width: 300px;
+  margin: 2em;
+  padding: 1em;
+}
