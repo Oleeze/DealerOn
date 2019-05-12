@@ -3,7 +3,10 @@ body {
 }
 
 h1 {
-  color: red;
+  background: lavender;
+  margin: 0 0 2em 0;
+  text-align: center;
+  padding: 1em;
 }
 
 .wrapper {
